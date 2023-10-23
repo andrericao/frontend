@@ -1,0 +1,10 @@
+<!-- Cáculo do valor do jantar -->
+
+<meta charset="UTF-8">
+
+<script>
+	const valorJantar = Number(prompt("Insira valor do jantar ")); // lê o valor do jantar
+	const taxaGarcom = valorJantar * 0.1;						   // calcula valor do garçom
+	const totalASerPago = valorJantar + taxaGarcom;
+	alert(`O valor do garçom é de R$ ${taxaGarcom.toFixed(2)} \nO total a ser pago é de R$${totalASerPago.toFixed(2)}`);
+</script>

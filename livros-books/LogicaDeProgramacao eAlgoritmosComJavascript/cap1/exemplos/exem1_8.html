@@ -1,0 +1,13 @@
+<!-- Cálculo da duração de horas de uma viagem -->
+
+<meta charset="UTF-8">
+
+<script>
+
+	const quantidadeDeDias = Number(prompt("Quantos dias leva a viagem? ")); // lê dados de entrada
+	const quantidadeDeHoras = Number(prompt("E quantas horas? "));
+	const diasEmHora = quantidadeDeDias * 24; 								 // converte o dia em horas
+	const tempoTotal = diasEmHora + quantidadeDeHoras;						 // soma as horas
+	alert(`Esta viagem leva ${tempoTotal} para acontecer`);					 // exibe o total de horas
+
+</script>
