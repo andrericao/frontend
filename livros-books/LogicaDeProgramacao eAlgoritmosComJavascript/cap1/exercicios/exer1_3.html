@@ -1,0 +1,9 @@
+<!-- A vista ou parcelado -->
+<meta charset="UTF-8">
+<script>
+	const valorDaCompra = Number(prompt("Qual valor total da compra?"));
+	const valorAVista = valorDaCompra - valorDaCompra * 0.1;
+	const valorParceladoPorTres = valorDaCompra / 3;
+
+	alert(`O valor a vista é de R$ ${valorAVista.toFixed(2)}. \nO valor parcelado é de R$ ${valorParceladoPorTres.toFixed(2)}.`);
+</script>

@@ -1,0 +1,9 @@
+<!-- dividor conta de pizzario por número de pessoas -->
+<meta charset="UTF-8">
+<script>
+	const valorDaConta = Number(prompt("Valor total da conta: "));
+	const numeroDePessoas = Number(prompt("A conta será dividida para quantas pessoas? "));
+	const valorPorCliente = valorDaConta / numeroDePessoas;
+
+	alert(`O valor da conta por cliente é de R$ ${valorPorCliente.toFixed(2)}`);
+</script>
