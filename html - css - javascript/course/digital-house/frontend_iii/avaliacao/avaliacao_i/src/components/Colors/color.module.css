@@ -1,0 +1,13 @@
+.card{
+	display: flex;
+	flex-direction: column;
+	gap: .8rem;
+}
+
+.cardContainer{
+	border-radius: .8rem;
+}
+
+.likeButton{
+	background-color: #198754;
+}

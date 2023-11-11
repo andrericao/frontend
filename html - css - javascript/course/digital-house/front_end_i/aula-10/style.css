@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+* {
+
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.teto {
+
+  background-color: #1CD1B0;
+  position: fixed;
+  width: 100%;
+  height: 38px;
+  left: 0px;
+  top: 0px;
+  z-index: 3;
+
+}
+
+.desconto {
+
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-style: normal;
+  font-size: 15px;
+  line-height: 18px;
+
+}
+
+.super-herois {
+
+  margin: auto;
+  box-shadow: 0px 10px 7px rgba(0, 0, 0, 0.25);
+  background-color: #00669f;
+  box-sizing: border-box;
+  position: fixed;
+  width: 100%;
+  height: 101px;
+  left: 0px;
+  top: 38px;
+  z-index: 3;
+
+}
+
+.cabecalho {
+
+  position: absolute;
+  top: 25px;
+  left: 28px;
+  width: 224px;
+  height: 47px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 47px;
+}
+
+.section {
+
+  flex-wrap: wrap;
+  position: absolute;
+  justify-content: center;
+  border-radius: 16px;
+  width: 100%;
+  min-height: 100%;
+  top: 225px;
+  
+
+}
+
+.hero-div {
+
+  display: inline-block;
+  position: relative;
+  background-color: #f3f3f3;
+  border-radius: 16px;
+  width: 400px;
+  left: 15%;
+  margin: 2%  2% 150px 2%;
+  overflow: hidden;
+
+}
+
+.hero-div .like {
+
+  width: 24px;
+  height: 22px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  overflow: hidden;
+}
+
+.background-image {
+
+  width: 100%;
+  height: 220px;
+  border-radius: 16px 16px 0px 0px;
+
+}
+
+.profile-hero {
+
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: whitesmoke;
+  position: relative;
+  top: -65px;
+  left: 130px;
+  object-fit: cover;
+  
+}
+
+
+p {
+
+  width: 300px;
+  position: relative;
+  bottom: 50px;
+  left: 50px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+
+}
+
+.button {
+
+  background-color: #00669f;
+  position: relative;
+  left: 120px;
+  bottom: 20px;
+  width: 145px;
+  height: 55px;
+  
+
+}
+button {
+
+  color: #f3f3f3;
+
+}
+
+footer {
+
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  background-color: #00669F;
+  height: 50px;
+
+}
+
+.footer h1 {
+
+  position: absolute;
+  padding: 15px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+
+  text-align: center;
+  color: #FFF9F9;
+
+}
+

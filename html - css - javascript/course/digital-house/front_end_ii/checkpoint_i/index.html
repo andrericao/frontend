@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./imagens/icon.png">
+    <title> Formulario de personagens </title>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+    
+    <form class="Cadastro-form">
+
+        <h1> Criação de Personagem </h1>
+
+       
+            <div class="controlador">
+                <input type="text" id="titulo" placeholder="Titulo" minlength="9"required >
+                <small>Preencha corretamente o campo Título</small>
+
+
+            </div>
+            
+            
+            <div class="controlador">
+                <input type="url" id="url" placeholder="URL" minlength="9" required >
+                <small>Preencha corretamente o campo URL</small>
+            
+    
+            </div>
+
+
+            <div class="controlador descricaoControl">
+               
+                <input type="text" id="descricao" placeholder="Descrição"minlength="9" required >
+                <small>Preencha corretamente o campo Descrição</small>
+
+
+            </div>
+
+            <div class="registrodiv">
+
+                <button class="registro" type="submit" id="postar" disabled > Cadastrar </button>
+           
+            </div>
+
+            
+
+    </form>
+
+    <div class="personagensCriados">
+
+        <h1 class="titulo-personagens">Personagens Criados</h1>
+
+        <!-- <h2>Não existem personagens criados.</h2> -->
+    
+    </div>
+    
+    <div class="posts">
+
+        <!-- <div class="item">
+        <img src="./imagens/harry.jpeg">
+        <h2> Harry Potter </h2>
+        <p>
+        Harry James Potter é o único filho de James e Lily Potter, membros originais da chamada Ordem da Fênix. Considerado um dos bruxos mais famosos da modernidade, seu nascimento foi tomado por uma profecia, que o elegeu como aquele com o poder necessário para derrotar o vilão Lord Voldemort. Desde então, sua família passou a ficar escondida, com medo do que Voldemort poderia fazer contra Harry.Quando Harry tinha apenas um ano e três meses de vida, Lord Voldemort fez a sua primeira tentativa de acabar com a vida do garoto, com o objetivo de impedir que a profecia pudesse se tornar realidade. Entretanto, James e Lily Potter conseguiram proteger o filho, que ganhou uma cicatriz na testa durante o ataque do vilão.
+        </p>
+        </div> -->
+
+
+    </div>
+
+
+
+
+    <script src="./main.js" type="module"></script>
+
+</body>
+</html>

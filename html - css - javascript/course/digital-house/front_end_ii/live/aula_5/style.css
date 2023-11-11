@@ -1,0 +1,28 @@
+* 
+{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.main-header ul
+{
+  display: flex;
+  gap: 15px;
+  list-style: none;
+
+}
+
+.main-header ul li
+{
+  color: white;
+  font-size: 22px;
+}
+
+@media(max-width: 768px)
+{
+  .main-header ul
+  {
+    display: none;
+  }
+}

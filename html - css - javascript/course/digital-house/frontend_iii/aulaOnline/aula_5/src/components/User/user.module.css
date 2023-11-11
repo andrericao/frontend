@@ -1,0 +1,49 @@
+.card{
+	display: flex;
+	flex-direction: column;
+	gap: .8rem;
+}
+
+.imageContainer{
+	height: 22rem;
+	border: .5rem groove lightgray;
+	border-radius: 15px;
+	overflow: hidden;
+}
+
+.cardUserImage{
+	height: 22rem;
+	object-fit: cover;
+	transition: all .3s ease-in-out;
+}
+
+.cardUserImage:hover{
+	transform: scale(1.1);
+}
+
+.buttonContainer{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: .5rem;
+}
+
+.button{
+	padding: .5rem;
+	transition: all .2s ease-in-out;
+	border: none;
+	border-radius: .5rem;
+}
+
+.button:hover{
+	opacity: .5;
+	cursor: pointer;
+}
+
+.likeButton{
+	background-color: #198754;
+}
+
+.disLikeButton{
+	background-color: #dc3545;
+}

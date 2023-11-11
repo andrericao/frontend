@@ -1,0 +1,18 @@
+
+
+Pizzaria 
+
+- Avaliações
+- Status (fechado ou aberto)
+- Redes sociais
+- Formas de pagamento
+- 25 anos
+- São Paulo
+- Delivery
+- Cores: vermelho, branco e azul
+- Decidimos menu
+- Cliente monta a pizza
+- Vegetariano, vegano e normal
+- Peguntar sobre localização
+- Meio a meio
+- Promoção

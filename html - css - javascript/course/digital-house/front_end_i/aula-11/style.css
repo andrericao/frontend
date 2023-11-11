@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #222222;
+  position: sticky;
+  top: 0;
+  height: 50px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  z-index: 50;
+}
+header .logo {
+  display: flex;
+  align-items: center;
+  padding-right: 450px;
+}
+
+.logo img {
+  width: 45px;
+}
+
+.header a {
+  text-decoration: none;
+}
+
+.header a:hover {
+  font-size: 103%;
+}
+
+.h1 {
+  width: 130px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.header .Pizza {
+  color: #39B24A;
+}
+
+.header .e {
+  color: #f3f3f3
+}
+
+.header .Front {
+  color: #FC200C;
+}
+
+.menu-flex {
+  list-style: none;
+  display: flex;
+  padding-left: 60px;
+  gap: 30px;
+}
+
+.menu-flex a {
+  text-decoration: none;
+  color: #f3f3f3;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 20px;
+}
+
+.menu-flex a:hover {
+  font-size: 102%;
+}
+
+.body-site {
+  padding: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  gap: 15px;
+}
+
+.opcoes {  
+  background-color: #39B24A;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  border-width: 3px;
+  width: 575px;
+  height: 500px
+}
+
+.opcoes .ilustracoes {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+.opcoes .frase-vendas {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 5%;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  color: #FC200C;
+}
+
+.highlight {
+  color: #f3f3f3;
+}
+
+.block {  
+  background-color: #39B24A;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  border-width: 3px;
+  width: 575px;
+  height: 500px;
+}
+
+.block-h1 {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  top: 5%;
+  text-align: center;
+
+  font-family: 'Roboto';
+  font-size: 700;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 28px;
+  color: #FC200C;
+}
+
+.block-sabores {
+  display: inline-block;
+  position: absolute;
+  left: 10%;
+  top: 50%;
+  z-index: 3;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 35px;
+  color: #f3f3f3
+}
+
+.block-pizza {
+  display: inline-block;
+  position: absolute;
+  width: 110%;
+  position: 0;
+  top: 15%;
+  left: 10%;
+}
+
+.block-image {
+  position: relative;
+  width: 100%;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #222222;
+  height: 100px;
+  gap: 450px;
+}
+
+footer .h1 a {
+  text-decoration: none;
+}
+
+footer .Pizza {
+  color: #39B24A;
+}
+
+footer .e {
+  color: #f3f3f3
+}
+
+footer .Front {
+  color: #FC200C;
+}
+
+.footer {
+  list-style: none;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #f3f3f3;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 22px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+
+}

@@ -16,4 +16,4 @@ frm.addEventListener('submit', (event) => {
 	respDuracao.innerText = `${horas} hr(s) e ${minutos} min(s)`;
 
 	event.preventDefault();							// envio do form
-})
+});
