@@ -21,8 +21,8 @@ frm.addEventListener("submit", (e) => {
 
 frm.btn_listar.addEventListener("click", () => {
 	if(carros.length == 0){
-		alert("Não há carros na lista")	
-		return
+		alert("Não há carros na lista");
+		return;
 	}
 
 	// método reduce() concatena uma String, obtendo modelo e preço de cada veículo

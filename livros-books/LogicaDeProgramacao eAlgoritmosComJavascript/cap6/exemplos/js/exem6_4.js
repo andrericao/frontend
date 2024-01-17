@@ -35,12 +35,34 @@ frm.btn_listar.addEventListener("click", () => {
 	resp.innerText = lista;
 });
 
-frm.in_resumir.addEventListener("click", () => {
+frm.btn_resumir.addEventListener("click", () => {
 	if(criancas.length == 0){
 		alert("Não há crianças na lista");
 		return;
 	}
 
 	const copia = [ ...criancas];
-	copia.sort((a, b) => a.idade - b.idade) // ordena por idade
+	copia.sort((a, b) => a.idade - b.idade); // ordena por idade
+	let resumo = "";
+	let aux = copia[0].idade; // menor idade do valor ordenado
+	let nomes = [];
+
+	for(const crianca of copia){
+		const { nome, idade} = crianca;
+		if(idade == aux) {
+			nomes.push(nome);
+		} else {
+			resumo += aux + " ano(s): " + nomes.length + " criança(s) - ";
+			resumo += ((nomes.length / copia.length) * 100 ).toFixed(2) + "%\n";
+			resumo += "(" + nomes.join(", ") + ")\n\n";
+			aux = idade;
+			nomes = [];
+			nomes.push(nome)
+		}
+	}
+
+	resumo += aux + " ano(s): " + nomes.length + " criança(s) - ";
+	resumo += ((nomes.length / copia.length) * 100).toFixed(2) + "%\n";
+	resumo += "(" + nomes.join(", ") + ")\n\n";
+	resp.innerText = resumo;
 });
