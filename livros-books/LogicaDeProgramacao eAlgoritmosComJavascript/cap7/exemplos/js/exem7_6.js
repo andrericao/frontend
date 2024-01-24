@@ -31,5 +31,5 @@ frm.addEventListener("submit", (e) => {
 		resp.innerText = "Ok! Senha Válida";
 	} else {
 		resp.innerText = `Erro... A senha deve: \n ${erros.join("\n ")}`;
-	}
+	}tri
 });
