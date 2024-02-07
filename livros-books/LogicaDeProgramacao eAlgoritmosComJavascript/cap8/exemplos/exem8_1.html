@@ -1,0 +1,15 @@
+<script>
+	const situacao = (nota, media) => { 
+
+		// exemplo de valor default: "(nota, media = X) => { ... }"
+		if(nota>= media){
+			alert("Aprovado!");
+		} else {
+			alert("Reprovado!")
+		}
+		
+	}
+
+	const prova1 = Number(prompt("Digite a nota: "));
+	situacao(prova1, 7);
+</script>
