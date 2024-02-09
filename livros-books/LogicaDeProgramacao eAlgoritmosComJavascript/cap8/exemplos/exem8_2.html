@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<title>Cap. 8 | Exemplo 2</title>
+</head>
+<body>
+
+	<img src="src/ex8_2.jpg" alt="alusão a compra parcelada" class="normal">
+	<h1>Revenda Avenida - Promoção</h1>
+
+	<form>
+		<p>
+			Modelo do Veículo:
+			<input type="text" id="in_modelo" required autofocus>
+		</p>
+
+		<p>
+			Ano de Fabricação:
+			<input type="number" id="in_ano" required>
+		</p>
+
+		<p>
+			Preço:
+			<input type="number" min="0" step="0.01" id="in_preco" required>
+		</p>
+
+		<input type="submit" value="Classificar - Calcular Entrada e Parcelas">
+
+	</form>
+
+	<h3 id="resp1"></h3>
+	<h3 id="resp2"></h3>
+	<h3 id="resp3"></h3>
+	
+	<script src="js/exem8_2.js"></script>
+
+</body>
+</html>
