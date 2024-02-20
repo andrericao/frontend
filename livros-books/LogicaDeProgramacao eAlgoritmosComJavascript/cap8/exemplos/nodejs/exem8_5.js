@@ -46,7 +46,7 @@ function pesquisar() {
 	}
 
 	if (contador == 0) {
-		console.log(`Não há vinhod cadastrados do tipo "${tipo}"`);
+		console.log(`Não há vinhos cadastrados do tipo "${tipo}"`);
 	}
 }
 
@@ -55,7 +55,7 @@ function calcularMedia() {
 
 	const num = vinhos.length
 	if (num == 0) {
-		console.log(`Não h´a vinhos cadastrados!`);
+		console.log(`Não há vinhos cadastrados!`);
 		return;
 	}
 
