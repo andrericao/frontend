@@ -1,21 +1,8 @@
 const frm = document.querySelector("form");
 let resp = document.querySelector("pre");
-let lista = [];
-
-const adicionar = () => {
-
-	const produto = frm.in_produto.value;
-
-		if (!lista.includes(produto)) {
-			lista.push(produto);
-		} else {
-			alert("produto já incluso na lista!")
-		}
-}
 
 
 const limparLista = () => {
-	lista = [];
 	localStorage.removeItem("listaCompras");
 }
 
@@ -41,9 +28,17 @@ frm.addEventListener("submit", (e) => {
 	const produto = frm.in_produto.value;
 	
 	if (localStorage.getItem("listaCompras")) {
-		const listaExistente = localStorage.getItem("listaCompras") + ";" + produto;
-		localStorage.setItem("listaCompras", listaExistente);
-	} else {
+		const frutas = localStorage.getItem("listaCompras").split(";");
+
+		if (frutas.includes(produto)) {
+			alert("Fruta já existe na lista");
+			frm.reset();
+			return;
+		} else {
+			const listaExistente = localStorage.getItem("listaCompras") + ";" + produto;
+			localStorage.setItem("listaCompras", listaExistente);
+		}
+		} else {
 		localStorage.setItem("listaCompras", produto);
 	}
 	mostrarLista();
@@ -52,5 +47,4 @@ frm.addEventListener("submit", (e) => {
 });
 
 window.addEventListener("load", mostrarLista);
-frm.btn_adicionar.addEventListener("click", adicionar);
 frm.btn_limpar_lista.addEventListener("click", limparLista);

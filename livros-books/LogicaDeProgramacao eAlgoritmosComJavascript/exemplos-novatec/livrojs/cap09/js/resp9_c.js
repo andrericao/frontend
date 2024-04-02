@@ -23,7 +23,7 @@ const mostrarPendentes = () => {
   let numPendentes
 
   if (localStorage.getItem("herbieServico")) {
-     numPendentes = localStorage.getItem("herbieServico").split(";").length
+    numPendentes = localStorage.getItem("herbieServico").split(";").length
   } else {
     numPendentes = 0
   }
