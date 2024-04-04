@@ -44,7 +44,7 @@ frm.btn_selecionar.addEventListener("click", () => {
 	tarefas[aux + 1].className = "tarefa-selecionada"; // muda estilo da próxima linha
 });
 
-frm.in_retirar.addEventListener("click", () => {
+frm.btn_retirar.addEventListener("click", () => {
 	const tarefas = document.querySelectorAll("h5");
 
 	let aux = -1;
@@ -64,4 +64,41 @@ frm.in_retirar.addEventListener("click", () => {
 		divQuadro.removeChild(tarefas[aux]);
 	}
 });
+
+frm.btn_gravar.addEventListener("click", () => {
+	const tarefas = document.querySelectorAll("h5");
+	console.log(tarefas);
+
+	if (tarefas.length == 0) {
+		alert("Não há tarefas para serem salvas!");
+		return;
+	}
+
+	let dados = "";
+	tarefas.forEach(tarefa => {
+		dados += tarefa.innerText + ";"; // acumula conteúdo de cada h5
+	});
+
+	// grava os dados em localStorage, removendo o último ";"
+	localStorage.setItem("tarefasDia", dados.slice(0, -1));
+
+	if (localStorage.getItem("tarefasDia")) {
+		alert("Ok, Tarefas Salvas!")
+	}
+});
+
+window.addEventListener("load", () => {
+	if (localStorage.getItem("tarefasDia")) {
+		// cria um vetor com a lista de tarefas (saparadas pelo split(";"))
+		const dados = localStorage.getItem("tarefasDia").split(";");
+
+		// percorre dados armazenados no localStorage
+		dados.forEach(dado => {
+			const h5 = document.createElement("h5");
+			const texto = document.createTextNode(dado);
+			h5.appendChild(texto);
+			divQuadro.appendChild(h5);
+		});
+	}
+})
 
