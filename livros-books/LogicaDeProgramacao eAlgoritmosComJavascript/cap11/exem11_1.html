@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.css">
+	<title>Cap. 11 | Exemplo 11</title>
+</head>
+<body>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-4">
+				<img src="src/ex11_1.jpg" alt="Jockey Club" class="img-fluid">
+			</div>
+
+			<div class="col-sm-8">
+				<h1>Jockey Club - Controle de Apostas</h1>
+				<form>
+					<div class="row">
+						<div class="col-sm-6">
+							<label for="in_cavalo">
+								Nº Cavalo:
+							</label>
+							<input type="number" id="in_cavalo" min="1" class="form-control" required autofocus>
+						</div>
+						<div class="col-sm-6">
+							<h5 id="out_cavalo" class="mt-4"></h5>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-6">
+							<label for="in_valor">
+								Aposta R$:
+							</label>
+							<input type="number" id="in_valor" class="form-control" min="1" step="0.5" required>
+						</div>
+						<div class="col sm-6">
+							<input type="submit" value="Apostar" id="btn_apostar" class="btn btn-primary mt-4">
+							<input type="button" value="Resumo" id="btn_resumo" class="btn btn-warning mt-4">
+							<input type="button" value="Ganhador" id="btn_ganhador" class="btn btn-success mt-4">
+							<input type="button" value="Novo Páreo" id="btn_novo" class="btn btn-danger mt-4">
+						</div>
+					</div>
+				</form>
+
+				<pre class="mt-3"></pre>
+
+			</div>
+		</div>
+	</div>
+
+	<script src="js/exem11_1.js"></script>
+
+</body>
+</html>
