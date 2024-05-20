@@ -2,6 +2,7 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
 	container: {
+		width: "100%",
 		flexDirection: "row",
 		backgroundColor: "#262626",
 		marginBottom: 10,
@@ -17,12 +18,15 @@ export const styles = StyleSheet.create({
 		paddingTop: 16,
 		fontSize: 16,
 		borderRadius: 5,
-		flex: 1
+		flex: 1,
 	},
 
 	botaoIcone: {
-		marginVertical: 56,
 		width: 28,
 		height: 28,
 	},
+
+	bouncyCheckBox: {
+		width: 380,
+	}
 });

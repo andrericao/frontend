@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
 		flex: 1,
 		backgroundColor: "#0D0D0D",
 		alignItems: "center",
-		paddingHorizontal: 24 
+		paddingHorizontal: 24,
 	},
 
 	imagemTitulo: {
