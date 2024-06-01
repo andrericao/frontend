@@ -1,6 +1,7 @@
 import { View, TouchableOpacity, Image, Text } from "react-native";
 import { styles } from "./styles";
 import BouncyCheckbox  from "react-native-bouncy-checkbox";
+import { useState } from "react";
 
 type Props = {
 	tarefa: string
@@ -9,18 +10,19 @@ type Props = {
 
 export const Tarefas = ({ tarefa, onRemove }: Props) => {
 
+	const [checkBoxState, setCheckBoxState] = useState(false);
+
 	return (
 		<View style={styles.container}>
-
 			
 				<BouncyCheckbox style={styles.bouncyCheckBox}
 					size={20}
-					fillColor="#5E60CE"
+					fillColor={checkBoxState ? "#5E60CE" : "#4EA8DE"}
 					unFillColor="transparent"
 					text={tarefa}
-					innerIconStyle={{ borderWidth: 1, borderColor: "#4EA8DE" }}
-					textStyle={styles.textoTarefa}
-					onPress={(isChecked: boolean) => {console.info(isChecked)}}
+					innerIconStyle={{ borderWidth: 1}}
+					textStyle={checkBoxState ? styles.textTarefaFeita : styles.textoTarefa}
+					onPress={setCheckBoxState}
 					/>
 				
 

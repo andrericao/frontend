@@ -9,16 +9,19 @@ export const styles = StyleSheet.create({
 		borderRadius: 5,
 		alignItems: "center",
 		height: 56,
-		marginHorizontal: 12,
 		paddingHorizontal: 16
 	},
 
 	textoTarefa: {
 		color: "#f2f2f2",
-		paddingTop: 16,
 		fontSize: 16,
 		borderRadius: 5,
-		flex: 1,
+	},
+
+	textTarefaFeita: {
+		color: "#808080",
+		fontSize: 16,
+		borderRadius: 5,
 	},
 
 	botaoIcone: {
@@ -27,6 +30,6 @@ export const styles = StyleSheet.create({
 	},
 
 	bouncyCheckBox: {
-		width: 380,
+		width: "93%"		
 	}
 });

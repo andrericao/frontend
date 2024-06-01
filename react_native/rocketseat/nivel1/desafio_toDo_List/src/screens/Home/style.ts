@@ -21,6 +21,18 @@ export const styles = StyleSheet.create({
 		marginBottom: 42
 	},
 
+	status: {
+		flexDirection: "row"
+	},	
+
+	concluidas: {
+		color: "#4EA8DE"
+	},
+
+	criadas: {
+		color: "#5E60CE"
+	},
+
 	input: {
 		flex: 1,
 		height: 56,
@@ -29,7 +41,20 @@ export const styles = StyleSheet.create({
 		borderRadius: 5,
 		padding: 16,
 		fontSize: 16,
-		marginRight: 10
+		marginRight: 10,
+	},
+
+	inputBorda: {
+		flex: 1,
+		height: 56,
+		backgroundColor: "#262626",
+		color: "#f2f2f2",
+		borderRadius: 5,
+		padding: 16,
+		fontSize: 16,
+		marginRight: 10,
+		borderWidth: 1,
+		borderColor: "#5E60CE",
 	},
 
 	botao: {

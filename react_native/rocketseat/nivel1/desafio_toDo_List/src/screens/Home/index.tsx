@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Image, TextInput, Text, View, TouchableOpacity, FlatList } from "react-native";
+import { Image, TextInput, Text, View, TouchableOpacity, FlatList, Alert } from "react-native";
 import { styles } from "./style";
 
 import { Tarefas } from "../../components/Tarefas";
@@ -7,15 +7,34 @@ import { Tarefas } from "../../components/Tarefas";
 
 const Home = () => {
 
-	const [tarefas2, setTarefas] = useState<string[]>([]);
-	const tarefas = ["Correr", "Nadar", "Programar", "Caminhar", "Comer", "Descansar", "Passear"]
+	const [tarefas, setTarefas] = useState<string[]>([]);
+	const [tarefaDescricao, setTarefaDescricao] = useState("");
+	const [focoInput, setFocoInput] = useState(true)
 
 	const adicionarTarefa = () => {
-		console.info("Tarefa Adicionada!");
+		if (tarefas.includes(tarefaDescricao)) {
+			return Alert.alert("Atenção", "Tarefa já existe!");
+		}
+		setTarefas(prevState => [...prevState, tarefaDescricao]);
+		setTarefaDescricao("");
 	}
 
 	const removerTarefa = (tarefa: string) => {
-		console.log(`tarefa ${tarefa} removida`)
+
+		Alert.alert("Remover", `Tem certeza que deseja remover tarefa ${tarefa}?`, [
+			{
+				text: "Sim",
+				onPress: () => 
+				// O método delete ocorre por meio do filter
+				// Onde filtramos todas as tarefas que são diferentes 
+				// da tarefa que veio como parâmetro
+			setTarefas(prevState => prevState.filter(tarefaDescricao => tarefaDescricao !== tarefa))
+			},
+			{
+				text: "Não",
+				style: "cancel"
+			}
+		])
 	} 
 
 	return (
@@ -24,11 +43,20 @@ const Home = () => {
 				style={styles.imagemTitulo}
 				source={require("../../../assets/logo-todo.png")} />
 			
+			<View style={styles.status}>
+				<Text style={styles.concluidas}>Criadas</Text>
+				<Text style={styles.criadas}>Concluídas</Text>
+			</View>
+			
 			<View style={styles.formulario}>
 				<TextInput
-					style={styles.input}
+					style={focoInput ? styles.input : styles.inputBorda}
 					placeholder="Adicione uma nova tarefa"
 					placeholderTextColor="#808080"
+					onChangeText={setTarefaDescricao}
+					value={tarefaDescricao}
+					onFocus={() => setFocoInput(false)}
+					onBlur={() => setFocoInput(true)}
 				/>
 				<TouchableOpacity
 					style={styles.botao}
@@ -48,7 +76,7 @@ const Home = () => {
 					<Tarefas
 						key={item}
 						tarefa={item}
-						onRemove={() => removerTarefa("Correr")}
+						onRemove={() => removerTarefa(item)}
 					/>
 				)}
 				showsVerticalScrollIndicator={false}
