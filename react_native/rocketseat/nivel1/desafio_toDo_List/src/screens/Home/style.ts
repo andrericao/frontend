@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { useFonts, Inter_700Bold } from "@expo-google-fonts/inter";
 
 export const styles = StyleSheet.create({
 	container: {
@@ -9,7 +10,7 @@ export const styles = StyleSheet.create({
 	},
 
 	imagemTitulo: {
-		marginTop: 60,
+		marginTop: 75,
 		width: 140,
 		height: 40
 	},
@@ -17,20 +18,47 @@ export const styles = StyleSheet.create({
 	formulario: {
 		width: "100%",
 		flexDirection: "row",
-		marginTop: 40,
+		marginTop: 15,
 		marginBottom: 42
 	},
 
 	status: {
-		flexDirection: "row"
+		flexDirection: "row",		
+		marginTop: 60,
+		width: "100%",
+		justifyContent: "space-between"
 	},	
 
-	concluidas: {
-		color: "#4EA8DE"
+	subStatus: {
+		flexDirection: "row",
+		marginRight: 10,
+	},
+
+	numeroStatus: {
+		color: "#f2f2f2",
+		fontSize: 18,
+		fontWeight: "bold",
+		borderRadius: 20,
+		backgroundColor: "#333333",
+		width: 36,
+		height: 32,
+		marginLeft: 10,
+		paddingLeft: 8,
+		paddingTop: 3
 	},
 
 	criadas: {
-		color: "#5E60CE"
+		color: "#4EA8DE",
+		fontSize: 18,
+		fontWeight: "bold",
+		paddingTop: 2
+	},
+
+	concluidas: {
+		color: "#5E60CE",
+		fontSize: 18,
+		fontWeight: "bold",
+		paddingTop: 2
 	},
 
 	input: {
@@ -62,13 +90,13 @@ export const styles = StyleSheet.create({
 		width: 56,
 		borderRadius: 5,
 		backgroundColor: "#1E6F9F",
-		justifyContent: "center",
 		alignItems: "center",
 	},
 
 	textoBotao: {
 		color: "#f2f2f2",
-		fontSize: 24
+		fontSize: 24,
+		paddingTop: 10
 	},
 
 	listaVaziaImagem: {

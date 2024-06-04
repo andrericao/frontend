@@ -6,6 +6,7 @@ import { useState } from "react";
 type Props = {
 	tarefa: string
 	onRemove: () => void
+
 }
 
 export const Tarefas = ({ tarefa, onRemove }: Props) => {

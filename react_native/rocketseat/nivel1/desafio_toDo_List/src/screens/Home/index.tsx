@@ -1,21 +1,26 @@
 import { useState } from "react";
 import { Image, TextInput, Text, View, TouchableOpacity, FlatList, Alert } from "react-native";
 import { styles } from "./style";
-
 import { Tarefas } from "../../components/Tarefas";
-
 
 const Home = () => {
 
 	const [tarefas, setTarefas] = useState<string[]>([]);
 	const [tarefaDescricao, setTarefaDescricao] = useState("");
-	const [focoInput, setFocoInput] = useState(true)
+	const [focoInput, setFocoInput] = useState(true);
+	const [criadas, setCriadas] = useState(0);
+	const [concluidas, setConcluidas] = useState(0);
+
+	const concluirTarefa = () => {
+	}
 
 	const adicionarTarefa = () => {
 		if (tarefas.includes(tarefaDescricao)) {
 			return Alert.alert("Atenção", "Tarefa já existe!");
 		}
 		setTarefas(prevState => [...prevState, tarefaDescricao]);
+		// Observar
+		setCriadas(criadas + 1);
 		setTarefaDescricao("");
 	}
 
@@ -24,18 +29,20 @@ const Home = () => {
 		Alert.alert("Remover", `Tem certeza que deseja remover tarefa ${tarefa}?`, [
 			{
 				text: "Sim",
-				onPress: () => 
-				// O método delete ocorre por meio do filter
-				// Onde filtramos todas as tarefas que são diferentes 
-				// da tarefa que veio como parâmetro
-			setTarefas(prevState => prevState.filter(tarefaDescricao => tarefaDescricao !== tarefa))
+				onPress: () =>
+					// O método delete ocorre por meio do filter
+					// Onde filtramos todas as tarefas que são diferentes 
+					// da tarefa que veio como parâmetro
+					setTarefas(prevState =>
+						prevState.filter(tarefaDescricao => tarefaDescricao !== tarefa))
 			},
 			{
 				text: "Não",
-				style: "cancel"
+				style: "cancel",
 			}
-		])
-	} 
+		]);
+			
+		}
 
 	return (
 		<View style={styles.container}>
@@ -44,8 +51,14 @@ const Home = () => {
 				source={require("../../../assets/logo-todo.png")} />
 			
 			<View style={styles.status}>
-				<Text style={styles.concluidas}>Criadas</Text>
-				<Text style={styles.criadas}>Concluídas</Text>
+				<View style={styles.subStatus}>
+					<Text style={styles.criadas}>Criadas</Text>
+					<Text style={styles.numeroStatus}> {criadas}</Text>
+				</View>
+				<View style={styles.subStatus}>
+					<Text style={styles.concluidas}>Concluídas</Text>
+					<Text style={styles.numeroStatus}> {concluidas}</Text>
+				</View>
 			</View>
 			
 			<View style={styles.formulario}>
