@@ -5,7 +5,8 @@ import { Tarefas } from "../../components/Tarefas";
 
 const Home = () => {
 
-	const [tarefas, setTarefas] = useState<string[]>([]);
+	//const [tarefas, setTarefas] = useState<string[]>([]);
+	const [tarefas, setTarefas] = useState<{ tarefasDescricao: string;  status: boolean}[]>([]);
 	const [tarefaDescricao, setTarefaDescricao] = useState("");
 	const [focoInput, setFocoInput] = useState(true);
 	const [criadas, setCriadas] = useState(0);
@@ -15,13 +16,26 @@ const Home = () => {
 	}
 
 	const adicionarTarefa = () => {
-		if (tarefas.includes(tarefaDescricao)) {
+		if (tarefas.tarefasDescricao.includes(tarefaDescricao)) {
 			return Alert.alert("Atenção", "Tarefa já existe!");
 		}
+
 		setTarefas(prevState => [...prevState, tarefaDescricao]);
 		// Observar
-		setCriadas(criadas + 1);
+		setCriadas(tarefas.length + 1);
 		setTarefaDescricao("");
+	}
+
+	const decrementoTarefa = (tarefa: string) => {
+
+		// O método delete ocorre por meio do filter
+		// Onde filtramos todas as tarefas que são diferentes 
+		// da tarefa que veio como parâmetro
+		setTarefas(prevState =>
+			prevState.filter(tarefaDescricao => tarefaDescricao !== tarefa));
+		
+		// POG		
+		setCriadas(criadas - 1);
 	}
 
 	const removerTarefa = (tarefa: string) => {
@@ -29,19 +43,13 @@ const Home = () => {
 		Alert.alert("Remover", `Tem certeza que deseja remover tarefa ${tarefa}?`, [
 			{
 				text: "Sim",
-				onPress: () =>
-					// O método delete ocorre por meio do filter
-					// Onde filtramos todas as tarefas que são diferentes 
-					// da tarefa que veio como parâmetro
-					setTarefas(prevState =>
-						prevState.filter(tarefaDescricao => tarefaDescricao !== tarefa))
+				onPress: () => decrementoTarefa(tarefa)
 			},
 			{
 				text: "Não",
 				style: "cancel",
 			}
 		]);
-			
 		}
 
 	return (
