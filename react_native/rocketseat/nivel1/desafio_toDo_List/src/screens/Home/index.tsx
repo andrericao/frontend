@@ -1,29 +1,64 @@
-import { useState } from "react";
-import { Image, TextInput, Text, View, TouchableOpacity, FlatList, Alert } from "react-native";
+import { useState, useEffect } from "react";
+import { Image, TextInput, Text, View, TouchableOpacity, FlatList, Alert, MouseEvent } from "react-native";
 import { styles } from "./style";
 import { Tarefas } from "../../components/Tarefas";
 
+interface TarefasItens  {
+	tarefa: string;
+	checada: boolean;
+}
+
 const Home = () => {
 
-	//const [tarefas, setTarefas] = useState<string[]>([]);
-	const [tarefas, setTarefas] = useState<{ tarefasDescricao: string;  status: boolean}[]>([]);
+	const [tarefas, setTarefas] = useState<TarefasItens[]>([]);
 	const [tarefaDescricao, setTarefaDescricao] = useState("");
 	const [focoInput, setFocoInput] = useState(true);
 	const [criadas, setCriadas] = useState(0);
 	const [concluidas, setConcluidas] = useState(0);
 
-	const concluirTarefa = () => {
-	}
-
 	const adicionarTarefa = () => {
-		if (tarefas.tarefasDescricao.includes(tarefaDescricao)) {
-			return Alert.alert("Atenção", "Tarefa já existe!");
-		}
 
-		setTarefas(prevState => [...prevState, tarefaDescricao]);
+		if (tarefaDescricao === "") return;
+
+		for (let i = 0; i < tarefas.length; i++){
+			if (tarefas.find(tarefa => tarefa.tarefa === tarefaDescricao)) {
+				return Alert.alert("Atenção", "Tarefa já existe!");
+			}
+		}
+		// criei objeto com mesma assinatura de TarefasItens
+		const tarefaDadosInput = {
+			"tarefa": tarefaDescricao,
+			"checada": false
+		}
+		setTarefas(prevState => [...prevState, tarefaDadosInput]);
 		// Observar
 		setCriadas(tarefas.length + 1);
 		setTarefaDescricao("");
+	}
+
+	// POG
+	const addTarefaConcluida = (tarefa: string) => {
+
+		const dado = {
+			"tarefa": tarefa,
+			"checada": Boolean
+		}
+
+		const indexTarefa = tarefas.findIndex(
+			tarefaDescricao => tarefaDescricao.tarefa == tarefa);
+
+		if (!tarefas[indexTarefa].checada) {
+			tarefas[indexTarefa].checada = true;
+		} else {
+			tarefas[indexTarefa].checada = false;
+		}
+		incrementoChecada();
+	}
+
+	const incrementoChecada = () => {
+		
+		const tarefasConcluidas = tarefas.filter(tarefa => tarefa.checada === true);
+		setConcluidas(tarefasConcluidas.length);
 	}
 
 	const decrementoTarefa = (tarefa: string) => {
@@ -32,7 +67,7 @@ const Home = () => {
 		// Onde filtramos todas as tarefas que são diferentes 
 		// da tarefa que veio como parâmetro
 		setTarefas(prevState =>
-			prevState.filter(tarefaDescricao => tarefaDescricao !== tarefa));
+			prevState.filter(tarefaDescricao => tarefaDescricao.tarefa !== tarefa));
 		
 		// POG		
 		setCriadas(criadas - 1);
@@ -92,12 +127,13 @@ const Home = () => {
 			<FlatList
 				// lista de tarefas sem uso de "map"
 				data={tarefas}
-				keyExtractor={item => item}
+				keyExtractor={item => item.tarefa}
 				renderItem={({ item }) => (
 					<Tarefas
-						key={item}
-						tarefa={item}
-						onRemove={() => removerTarefa(item)}
+						key={item.tarefa}
+						tarefa={item.tarefa}
+						onRemove={() => removerTarefa(item.tarefa)}
+						mudarStatus={() => addTarefaConcluida(item.tarefa)}
 					/>
 				)}
 				showsVerticalScrollIndicator={false}
@@ -107,10 +143,10 @@ const Home = () => {
 							source={require("../../../assets/clipboard.png")}
 						/>
 						<Text style={styles.listaVaziaTexto}>
-						Você ainda não tem tarefas cadastradas
+							Você ainda não tem tarefas cadastradas
 						</Text>
 						<Text style={styles.listaVaziaTexto2}>
-						Crie tarefas e organize seus itens a fazer
+							Crie tarefas e organize seus itens a fazer
 						</Text>
 					</View>
 				)}
