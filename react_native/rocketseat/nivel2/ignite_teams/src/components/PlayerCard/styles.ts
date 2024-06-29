@@ -20,14 +20,14 @@ export const Name = styled.Text`
 	${({ theme }) => css`
 		font-size: ${theme.FONT_SIZE.MD}px;
 		color: ${theme.COLORS.GRAY_200};
-		font-size: ${theme.FONT_FAMILY.REGULAR};
+		font-family: ${theme.FONT_FAMILY.REGULAR};
 	`}
 `;
 
 export const Icon = styled(MaterialIcons).attrs(({ theme }) => ({
 	size: 24,
-	color: theme.COLORS.GRAY_200
+	color: theme.COLORS.GRAY_200,
 }))`
 	margin-left: 16px;
-	margin-right: 4px;
+	margin-right: 12px;
 `;

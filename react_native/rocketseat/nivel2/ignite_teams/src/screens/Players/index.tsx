@@ -7,13 +7,16 @@ import { ButtonIcon } from "@components/ButtonIcon";
 import { Input } from "@components/Input";
 import { Filter } from "@components/Filter";
 import { PlayerCard } from "@components/PlayerCard";
+import { Button } from "@components/Button";
+import { ListEmpty } from "@components/ListEmpty";
 
-import { Container, Form, HeaderList, NumbersOfPlayers } from "./style";
+import { Container, Form, HeaderList, NumberOfPlayers } from "./style";
+
 
 export const Players = () => {
 
 	const [team, setTeam] = useState("Time A");
-	const [players, setPlayers] = useState(["André"]);
+	const [players, setPlayers] = useState(["André", "Nathália", "Noah", "Andréa", "Henrique", "Marcos", "Valéria", "Hety", "Babu", "Valadares", "Hanrriethe"]);
 
 	return (
 		<Container>
@@ -45,21 +48,38 @@ export const Players = () => {
 					)}
 					horizontal
 				/>
-				<NumbersOfPlayers>
+				<NumberOfPlayers>
 					{players.length}
-				</NumbersOfPlayers>
+				</NumberOfPlayers>
 			</HeaderList>
 
-			<FlatList
+			<FlatList 
 				data={players}
 				keyExtractor={item => item}
 				renderItem={({ item }) => (
 					<PlayerCard
 						name={item}
+						onRemove={() => { }}
 					/>
 				)}
+				ListEmptyComponent={() => (
+					<ListEmpty
+						message="Não há pessoas nesse time"
+					/>
+				)}
+				showsVerticalScrollIndicator={false}
+				// A estilização abaixo serve aumentar distância 
+				// entre o final da lista e o final do celular
+				contentContainerStyle={[
+					{ paddingBottom: 100 },
+					players.length === 0 && { flex: 1 }
+				]}
 			/>
 
+			<Button 
+				title="Remover Turma"
+				type="SECUNDARY"
+			/>
 		</Container>
 	)
 }

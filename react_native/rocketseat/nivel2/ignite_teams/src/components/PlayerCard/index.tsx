@@ -1,12 +1,16 @@
-import { Container, Icon, Name } from "./styles";
+import { ButtonIcon } from "@components/ButtonIcon";
+import { Container, Name, Icon } from "./styles";
+
 
 type Props = {
 	name: string;
+	onRemove: () => void;
 }
 
-export const PlayerCard = ({name}: Props) => {
+export const PlayerCard = ({ name, onRemove }: Props) => {
 	return (
 		<Container>
+
 			<Icon
 				name="person"
 			/>
@@ -14,7 +18,13 @@ export const PlayerCard = ({name}: Props) => {
 			<Name>
 				{name}
 			</Name>
-			
+
+			<ButtonIcon
+				icon="close"
+				type="SECUNDARY"
+				onPress={onRemove}
+			/>
+
 		</Container>
-	)
+	);
 }
