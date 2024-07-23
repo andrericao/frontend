@@ -10,7 +10,7 @@ import { Loading } from "@components/Loading";
 import { ListEmpty } from "@components/ListEmpty";
 import { Highlight } from "@components/Highlight";
 import { ButtonIcon } from "@components/ButtonIcon";
-import { PlayerCard } from "@components/PlayerCard";
+import { PlayerCard } from "@components/Loading/PlayerCard";
 
 import { AppError } from "@utils/AppError";
 

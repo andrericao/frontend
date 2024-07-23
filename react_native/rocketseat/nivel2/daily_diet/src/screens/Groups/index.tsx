@@ -1,10 +1,12 @@
 import { Header } from '@components/Header';
-import { Container, Title } from './styles';
+import { Container } from './styles';
+import { Card } from '@components/Card';
 
 export function Groups() {
   return (
 		<Container>
 			<Header />
+			<Card />
 		</Container>
   );
 }
